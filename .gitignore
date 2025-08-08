@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+.env/
+venv/
+ENV/
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs / temp
+*.log
+tmp/
+*.cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Plot / figure caches
+*.png
+!VQA EGT/*.png
+
+# Matplotlib cache
+**/matplotlib-*cache
+
+# Environment/config backups
+*.swp
+*.swo
+
+# Qibo compiled artifacts (if any future backends)
+**/*.so
+**/*.dylib
