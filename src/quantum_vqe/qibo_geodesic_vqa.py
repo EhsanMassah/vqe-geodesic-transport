@@ -52,7 +52,7 @@ class QiboVariationalCircuit:
     Implements hardware-efficient ansätze with parameterized gates
     """
     
-    def __init__(self, n_qubits: int, n_layers: int = 2, ansatz_type: str = "hardware_efficient"):
+    def __init__(self, n_qubits: int, n_layers: int = 3, ansatz_type: str = "hardware_efficient"):
         self.n_qubits = n_qubits
         self.n_layers = n_layers
         self.ansatz_type = ansatz_type
@@ -729,7 +729,7 @@ class QiboVQE:
     """
     
     def __init__(self, hamiltonian: hamiltonians.Hamiltonian, 
-                 n_qubits: int, n_layers: int = 2, 
+                 n_qubits: int, n_layers: int = 3, 
                  ansatz_type: str = "hardware_efficient"):
         self.hamiltonian = hamiltonian
         self.n_qubits = n_qubits
@@ -920,7 +920,7 @@ def demonstrate_qibo_vqe():
         vqe = QiboVQE(
             hamiltonian=hamiltonian,
             n_qubits=case["n_qubits"],
-            n_layers=1,
+            n_layers=3,
             ansatz_type=case["ansatz_type"]
         )
         
@@ -1025,7 +1025,7 @@ def analyze_qibo_circuit_properties():
         print(f"\nAnalyzing {ansatz_type} ansatz...")
         
         # Create circuit and manifold
-        circuit = QiboVariationalCircuit(n_qubits, n_layers=1, ansatz_type=ansatz_type)
+        circuit = QiboVariationalCircuit(n_qubits, n_layers=3, ansatz_type=ansatz_type)
         manifold = QiboQuantumManifold(circuit, hamiltonian)
         
         # Sample random parameters
@@ -1127,7 +1127,7 @@ def run_interactive_session():
         # Supported ansatz types
         ansatz = _prompt_choice("Choose ansatz", ['hardware_efficient','alternating','strongly_entangling'], 'hardware_efficient')
         qubits = _prompt_int("Number of qubits", [2,3,4], 2)
-        layers = _prompt_int("Number of layers", list(range(1,7)), 2)
+        layers = _prompt_int("Number of layers", list(range(1,7)), 3)
         htype = _prompt_choice("Hamiltonian type", ['tfim','xxz','xxx','xyz'], 'tfim')
         iters = _prompt_int("Iterations", list(range(10, 501, 10)), 100)
         print("Learning rate (float) [default 0.03]:")

@@ -70,7 +70,7 @@ def run_single_vqe():
         ham_types = {"1": "ising", "2": "heisenberg", "3": "random"}
         ham_type = ham_types.get(ham_choice, "ising")
         
-        n_layers = int(input("Number of circuit layers (1-3): ") or "2")
+        n_layers = int(input("Number of circuit layers (1-6): ") or "3")
         n_iterations = int(input("Number of optimization iterations (10-100): ") or "50")
         learning_rate = float(input("Learning rate (0.001-0.1): ") or "0.05")
         
@@ -271,7 +271,7 @@ def custom_hamiltonian_vqe():
     print(f"Eigenvalues: {np.linalg.eigvals(H)}")
     
     # Run VQE
-    n_layers = int(input(f"Number of layers for {n_qubits}-qubit circuit (default 2): ") or "2")
+    n_layers = int(input(f"Number of layers for {n_qubits}-qubit circuit (1-6, default 3): ") or "3")
     
     vqe = QuantumVariationalEigensolver(H, n_qubits, n_layers)
     result = vqe.find_ground_state(n_iterations=50, learning_rate=0.05)

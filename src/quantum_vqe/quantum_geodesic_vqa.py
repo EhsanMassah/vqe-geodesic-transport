@@ -26,7 +26,7 @@ warnings.filterwarnings('ignore')
 class QuantumCircuit:
     """Simple quantum circuit representation for VQA"""
     
-    def __init__(self, n_qubits: int, n_layers: int = 1):
+    def __init__(self, n_qubits: int, n_layers: int = 3):
         self.n_qubits = n_qubits
         self.n_layers = n_layers
         self.n_params = self._count_parameters()
@@ -422,7 +422,7 @@ class QuantumVariationalEigensolver:
     variational quantum circuits and natural gradient descent.
     """
     
-    def __init__(self, hamiltonian: np.ndarray, n_qubits: int, n_layers: int = 2):
+    def __init__(self, hamiltonian: np.ndarray, n_qubits: int, n_layers: int = 3):
         self.hamiltonian = hamiltonian
         self.n_qubits = n_qubits
         self.n_layers = n_layers
@@ -607,7 +607,7 @@ def demonstrate_geodesic_vqe():
         vqe = QuantumVariationalEigensolver(
             hamiltonian=H,
             n_qubits=case["n_qubits"],
-            n_layers=2
+            n_layers=3
         )
         
         # Run optimization

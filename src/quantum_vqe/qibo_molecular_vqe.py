@@ -874,6 +874,24 @@ def run_simple_interactive():
             pass
         print("❌ Please enter 1, 2, 3, or 4")
     
+    # Optional: Custom layer count
+    custom_layers = prompt_yes_no(f"Customize layer count? (current: {n_layers})", False)
+    if custom_layers:
+        while True:
+            try:
+                layer_input = input(f"Enter number of layers (1-6) [{n_layers}]: ").strip()
+                if not layer_input:
+                    break  # Keep current n_layers
+                new_layers = int(layer_input)
+                if 1 <= new_layers <= 6:
+                    n_layers = new_layers
+                    print(f"✅ Updated to {n_layers} layers")
+                    break
+                else:
+                    print("❌ Please enter a number between 1 and 6")
+            except ValueError:
+                print("❌ Please enter a valid number")
+
     # Question 4: Want analysis after?
     print_section("Analysis Options")
     run_analysis = prompt_yes_no("Perform energy landscape analysis after optimization?", False)
