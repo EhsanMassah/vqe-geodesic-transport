@@ -1,12 +1,12 @@
 """
-Stiefel Manifolds Package
+Geometry Module
 
-This package contains visualizations and utilities for exploring Stiefel manifolds.
+Stiefel manifold implementations and geometric visualizations.
+Educational tools for understanding differential geometry concepts.
 
-Modules:
---------
-- stiefel_manifold: Core visualization functions for V(n,k) manifolds
-- run_stiefel: Interactive runner for individual visualizations
+Main Components:
+- stiefel_manifold: Core Stiefel manifold operations
+- run_stiefel: Visualization and examples
 
 Usage:
 ------

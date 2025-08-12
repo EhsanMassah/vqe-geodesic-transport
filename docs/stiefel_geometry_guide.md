@@ -1,30 +1,43 @@
-# Stiefel Manifolds
+# Stiefel Manifolds - Classical Geometric Foundations
 
-This folder contains comprehensive visualizations and utilities for exploring Stiefel manifolds V(n,k) - the space of orthonormal k-frames in Rⁿ.
+Classical Stiefel manifold visualization and analysis utilities supporting the quantum geometric optimization framework. These visualizations provide intuition for the differential geometric concepts used in the quantum parameter manifold optimization.
+
+## Relationship to Quantum VQE
+
+The **Stiefel manifolds V(n,k)** provide classical geometric intuition for understanding:
+
+- **Parameter manifold structure** in quantum circuits
+- **Geodesic transport** concepts before quantum implementation  
+- **Riemannian metric properties** through classical examples
+- **Parallel transport** visualization in familiar settings
+
+**Connection to Quantum Work:** The geometric principles visualized here for classical Stiefel manifolds directly inform the quantum Fisher information metric (QFIM) geodesic transport implemented in the main VQE optimization.
 
 ## Files
 
 ### Core Modules
-- **`stiefel_manifold.py`** - Main visualization functions for different Stiefel manifolds
-- **`run_stiefel.py`** - Interactive runner for individual visualizations
+- **`stiefel_manifold.py`** - Classical manifold visualizations (geometric foundation)
+- **`run_stiefel.py`** - Interactive runner for educational exploration
 - **`__init__.py`** - Package initialization and exports
 
 ## Supported Visualizations
 
-### General Function (New!)
-- **`visualize_stiefel_manifold(n, k)`** - Universal function for any V(n,k) with 2 ≤ n ≤ 4, 1 ≤ k ≤ n
+### Universal Function 
+- **`visualize_stiefel_manifold(n, k)`** - General function for any V(n,k) with 2 ≤ n ≤ 4, 1 ≤ k ≤ n
 
-### Specific Manifolds
-- **V(2,1) = S¹**: Unit circle in R²
-- **V(3,1) = S²**: Unit sphere in R³ with random point sampling
-- **V(3,2)**: Orthonormal 2-frames in R³, showing vector pairs and Grassmannian projection
-- **V(4,1) = S³**: Unit sphere in R⁴ with stereographic projection and cross-sections
-- **V(4,2)**: Orthonormal 2-frames in R⁴ with validation checks and projections
-- **V(4,3)**: Orthonormal 3-frames in R⁴ with comprehensive analysis
+### Educational Manifolds
+- **V(2,1) = S¹**: Unit circle (simplest curved manifold)
+- **V(3,1) = S²**: Unit sphere with geodesics and parallel transport
+- **V(3,2)**: Orthonormal 2-frames showing bundle structure
+- **V(4,1) = S³**: 4D sphere with stereographic projections
+- **V(4,2)**: Complex orthonormal frames with validation
+- **V(4,3)**: High-dimensional frame analysis
+
+**Educational Value:** These classical examples build intuition for the quantum parameter manifolds where similar geometric optimization principles apply with the QFIM as the metric tensor.
 
 ## Usage
 
-### General Function (Recommended)
+### Quick Educational Demo
 ```python
 from stiefel_manifolds import visualize_stiefel_manifold
 import matplotlib.pyplot as plt
